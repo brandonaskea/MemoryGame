@@ -16,6 +16,8 @@
 		89BDDB33222901EC004E2F4D /* MGGameplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BDDB32222901EC004E2F4D /* MGGameplayViewController.swift */; };
 		89BDDB3522291943004E2F4D /* MGGameplayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BDDB3422291943004E2F4D /* MGGameplayScene.swift */; };
 		89BDDB37222919AF004E2F4D /* MGScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 89BDDB36222919AF004E2F4D /* MGScene.sks */; };
+		89BDDB3A22292102004E2F4D /* MGCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BDDB3922292102004E2F4D /* MGCard.swift */; };
+		89BDDB3C222922AD004E2F4D /* MGCardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BDDB3B222922AD004E2F4D /* MGCardType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		89BDDB32222901EC004E2F4D /* MGGameplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGGameplayViewController.swift; sourceTree = "<group>"; };
 		89BDDB3422291943004E2F4D /* MGGameplayScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGGameplayScene.swift; sourceTree = "<group>"; };
 		89BDDB36222919AF004E2F4D /* MGScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MGScene.sks; sourceTree = "<group>"; };
+		89BDDB3922292102004E2F4D /* MGCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGCard.swift; sourceTree = "<group>"; };
+		89BDDB3B222922AD004E2F4D /* MGCardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGCardType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 				89BDDB092228D031004E2F4D /* AppDelegate.swift */,
 				89BDDB3122290042004E2F4D /* Lobby */,
 				89BDDB3822291B04004E2F4D /* Gameplay */,
+				89BDDB3922292102004E2F4D /* MGCard.swift */,
+				89BDDB3B222922AD004E2F4D /* MGCardType.swift */,
 				89BDDB132228D031004E2F4D /* Main.storyboard */,
 				89BDDB162228D031004E2F4D /* Assets.xcassets */,
 				89BDDB182228D031004E2F4D /* LaunchScreen.storyboard */,
@@ -223,6 +229,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89BDDB3A22292102004E2F4D /* MGCard.swift in Sources */,
+				89BDDB3C222922AD004E2F4D /* MGCardType.swift in Sources */,
 				89BDDB302228D4CC004E2F4D /* MGLobbyViewController.swift in Sources */,
 				89BDDB3522291943004E2F4D /* MGGameplayScene.swift in Sources */,
 				89BDDB33222901EC004E2F4D /* MGGameplayViewController.swift in Sources */,
