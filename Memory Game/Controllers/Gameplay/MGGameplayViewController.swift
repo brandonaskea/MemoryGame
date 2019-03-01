@@ -10,15 +10,13 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-private let sceneName = "MGScene"
-
 class MGGameplayViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         guard let view = self.view as? SKView,
-        let scene = SKScene(fileNamed: sceneName)
+        let scene = SKScene(fileNamed: MGConstants.sceneName)
         else { return }
         
         scene.scaleMode = .aspectFill

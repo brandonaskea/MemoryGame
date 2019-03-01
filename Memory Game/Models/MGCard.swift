@@ -13,7 +13,7 @@ class MGCard: SKSpriteNode {
     
     private var type: MGCardType = .unknown
     
-    init(size: CGSize, cardType: MGCardType) {
+    init(size: CGSize) {
         super.init(texture: nil, color: .clear, size: size)
         updateWith(cardType: type)
     }

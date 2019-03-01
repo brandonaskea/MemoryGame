@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yNi-Va-1fD">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Lobby View Controller-->
+        <scene sceneID="Ggp-hS-82d">
+            <objects>
+                <viewController id="yNi-Va-1fD" customClass="MGLobbyViewController" customModule="Memory_Game" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jaL-xF-5V4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fLL-yL-3k1">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XwW-2m-g4E">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="331"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FlJ-uO-KRk" customClass="MGHeaderLabel" customModule="Memory_Game" customModuleProvider="target">
+                                                <rect key="frame" x="187.5" y="165.5" width="0.0" height="0.0"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="40"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="60"/>
+                                                </variation>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="FlJ-uO-KRk" firstAttribute="centerY" secondItem="XwW-2m-g4E" secondAttribute="centerY" id="6eN-AB-hjb"/>
+                                            <constraint firstItem="FlJ-uO-KRk" firstAttribute="centerX" secondItem="XwW-2m-g4E" secondAttribute="centerX" id="8jN-7d-H0C"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kWp-tl-gPj">
+                                        <rect key="frame" x="0.0" y="331" width="375" height="64"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkf-PQ-BQd" customClass="MGGameplayButton" customModule="Memory_Game" customModuleProvider="target">
+                                                <rect key="frame" x="47.5" y="10" width="280" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="280" id="8vm-mu-tNR">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="400"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="AgQ-dB-7oe"/>
+                                            <constraint firstItem="nkf-PQ-BQd" firstAttribute="centerX" secondItem="kWp-tl-gPj" secondAttribute="centerX" id="Ecg-EO-e1I"/>
+                                            <constraint firstAttribute="bottom" secondItem="nkf-PQ-BQd" secondAttribute="bottom" constant="10" id="b8d-VM-pP2"/>
+                                            <constraint firstItem="nkf-PQ-BQd" firstAttribute="top" secondItem="kWp-tl-gPj" secondAttribute="top" constant="10" id="csu-bi-qHc"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KuF-Ih-A0e">
+                                        <rect key="frame" x="0.0" y="395" width="375" height="64"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T8n-vM-VZc" customClass="MGGameplayButton" customModule="Memory_Game" customModuleProvider="target">
+                                                <rect key="frame" x="47.5" y="10" width="280" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="280" id="tMv-yw-uzX">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="400"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="T8n-vM-VZc" secondAttribute="bottom" constant="10" id="LuM-fQ-MiQ"/>
+                                            <constraint firstItem="T8n-vM-VZc" firstAttribute="centerX" secondItem="KuF-Ih-A0e" secondAttribute="centerX" id="Nfq-u2-2fN"/>
+                                            <constraint firstItem="T8n-vM-VZc" firstAttribute="top" secondItem="KuF-Ih-A0e" secondAttribute="top" constant="10" id="aWi-3i-i2a"/>
+                                            <constraint firstAttribute="height" constant="64" id="o7I-gj-Ng5"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gMt-QZ-cn6">
+                                        <rect key="frame" x="0.0" y="459" width="375" height="64"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgC-jx-BBX" customClass="MGGameplayButton" customModule="Memory_Game" customModuleProvider="target">
+                                                <rect key="frame" x="47.5" y="10" width="280" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="280" id="WrF-Hh-Her">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="400"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="AUs-1M-3o7"/>
+                                            <constraint firstAttribute="bottom" secondItem="lgC-jx-BBX" secondAttribute="bottom" constant="10" id="b5v-gK-8oT"/>
+                                            <constraint firstItem="lgC-jx-BBX" firstAttribute="centerX" secondItem="gMt-QZ-cn6" secondAttribute="centerX" id="lY3-uZ-9Gl"/>
+                                            <constraint firstItem="lgC-jx-BBX" firstAttribute="top" secondItem="gMt-QZ-cn6" secondAttribute="top" constant="10" id="oj6-QU-Vk4"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a5c-TB-hLZ">
+                                        <rect key="frame" x="0.0" y="523" width="375" height="64"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1h-kb-yVf" customClass="MGGameplayButton" customModule="Memory_Game" customModuleProvider="target">
+                                                <rect key="frame" x="47.5" y="10" width="280" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="280" id="SbL-Qf-NLK">
+                                                        <variation key="heightClass=regular-widthClass=regular" constant="400"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="g1h-kb-yVf" firstAttribute="centerX" secondItem="a5c-TB-hLZ" secondAttribute="centerX" id="DYe-1S-acp"/>
+                                            <constraint firstItem="g1h-kb-yVf" firstAttribute="top" secondItem="a5c-TB-hLZ" secondAttribute="top" constant="10" id="HGz-hb-FMd"/>
+                                            <constraint firstAttribute="bottom" secondItem="g1h-kb-yVf" secondAttribute="bottom" constant="10" id="oaT-BW-elR"/>
+                                            <constraint firstAttribute="height" constant="64" id="qEG-LV-BTl"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IjZ-gG-E4c">
+                                        <rect key="frame" x="0.0" y="587" width="375" height="60"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="ZCw-z4-30I">
+                                                <variation key="heightClass=compact-widthClass=compact" constant="10"/>
+                                            </constraint>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fLL-yL-3k1" firstAttribute="leading" secondItem="Bqe-g2-YXN" secondAttribute="leading" id="Fjg-eo-Wry"/>
+                            <constraint firstItem="Bqe-g2-YXN" firstAttribute="bottom" secondItem="fLL-yL-3k1" secondAttribute="bottom" id="NgI-4z-plh"/>
+                            <constraint firstItem="Bqe-g2-YXN" firstAttribute="trailing" secondItem="fLL-yL-3k1" secondAttribute="trailing" id="hki-Wh-jE4"/>
+                            <constraint firstItem="fLL-yL-3k1" firstAttribute="top" secondItem="Bqe-g2-YXN" secondAttribute="top" id="njU-wa-QdA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Bqe-g2-YXN"/>
+                    </view>
+                    <connections>
+                        <outlet property="headerLabel" destination="FlJ-uO-KRk" id="uY2-Rv-wKo"/>
+                        <outletCollection property="gameplayButtons" destination="lgC-jx-BBX" collectionClass="NSMutableArray" id="yUO-ZR-ZO2"/>
+                        <outletCollection property="gameplayButtons" destination="nkf-PQ-BQd" collectionClass="NSMutableArray" id="brR-5S-uXw"/>
+                        <outletCollection property="gameplayButtons" destination="T8n-vM-VZc" collectionClass="NSMutableArray" id="Mo1-up-CqP"/>
+                        <outletCollection property="gameplayButtons" destination="g1h-kb-yVf" collectionClass="NSMutableArray" id="4Zr-Nq-bj7"/>
+                        <segue destination="BV1-FR-VrT" kind="presentation" identifier="gameplay" id="Ast-8z-lRH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aAE-3l-F4u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-330.39999999999998" y="133.5832083958021"/>
+        </scene>
+        <!--Gameplay View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="MGGameplayViewController" customModule="Memory_Game" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="535" y="134"/>
+        </scene>
+    </scenes>
+</document>

@@ -18,6 +18,11 @@
 		89BDDB37222919AF004E2F4D /* MGScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 89BDDB36222919AF004E2F4D /* MGScene.sks */; };
 		89BDDB3A22292102004E2F4D /* MGCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BDDB3922292102004E2F4D /* MGCard.swift */; };
 		89BDDB3C222922AD004E2F4D /* MGCardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BDDB3B222922AD004E2F4D /* MGCardType.swift */; };
+		89BDDB4022292E45004E2F4D /* MGGameplayOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BDDB3F22292E45004E2F4D /* MGGameplayOption.swift */; };
+		89BDDB4222293628004E2F4D /* MGConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BDDB4122293628004E2F4D /* MGConstants.swift */; };
+		89BDDB44222938E1004E2F4D /* MGGameplayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BDDB43222938E1004E2F4D /* MGGameplayButton.swift */; };
+		89BDDB4722293CFF004E2F4D /* MGHeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BDDB4622293CFF004E2F4D /* MGHeaderLabel.swift */; };
+		89BDDB4A22293EB2004E2F4D /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BDDB4922293EB2004E2F4D /* UILabelExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +51,11 @@
 		89BDDB36222919AF004E2F4D /* MGScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MGScene.sks; sourceTree = "<group>"; };
 		89BDDB3922292102004E2F4D /* MGCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGCard.swift; sourceTree = "<group>"; };
 		89BDDB3B222922AD004E2F4D /* MGCardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGCardType.swift; sourceTree = "<group>"; };
+		89BDDB3F22292E45004E2F4D /* MGGameplayOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGGameplayOption.swift; sourceTree = "<group>"; };
+		89BDDB4122293628004E2F4D /* MGConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGConstants.swift; sourceTree = "<group>"; };
+		89BDDB43222938E1004E2F4D /* MGGameplayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGGameplayButton.swift; sourceTree = "<group>"; };
+		89BDDB4622293CFF004E2F4D /* MGHeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGHeaderLabel.swift; sourceTree = "<group>"; };
+		89BDDB4922293EB2004E2F4D /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,13 +98,11 @@
 			isa = PBXGroup;
 			children = (
 				89BDDB092228D031004E2F4D /* AppDelegate.swift */,
-				89BDDB3122290042004E2F4D /* Lobby */,
-				89BDDB3822291B04004E2F4D /* Gameplay */,
-				89BDDB3922292102004E2F4D /* MGCard.swift */,
-				89BDDB3B222922AD004E2F4D /* MGCardType.swift */,
-				89BDDB132228D031004E2F4D /* Main.storyboard */,
-				89BDDB162228D031004E2F4D /* Assets.xcassets */,
-				89BDDB182228D031004E2F4D /* LaunchScreen.storyboard */,
+				89BDDB3D22292D9F004E2F4D /* Controllers */,
+				89BDDB45222938E5004E2F4D /* Views */,
+				89BDDB3E22292DD8004E2F4D /* Models */,
+				89BDDB4C22294A4C004E2F4D /* Assets */,
+				89BDDB4B22294A40004E2F4D /* Utility */,
 				89BDDB1B2228D031004E2F4D /* Info.plist */,
 			);
 			path = "Memory Game";
@@ -125,6 +133,61 @@
 				89BDDB36222919AF004E2F4D /* MGScene.sks */,
 			);
 			path = Gameplay;
+			sourceTree = "<group>";
+		};
+		89BDDB3D22292D9F004E2F4D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				89BDDB132228D031004E2F4D /* Main.storyboard */,
+				89BDDB3122290042004E2F4D /* Lobby */,
+				89BDDB3822291B04004E2F4D /* Gameplay */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		89BDDB3E22292DD8004E2F4D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				89BDDB4822293E8A004E2F4D /* Apple Extensions */,
+				89BDDB3922292102004E2F4D /* MGCard.swift */,
+				89BDDB3B222922AD004E2F4D /* MGCardType.swift */,
+				89BDDB3F22292E45004E2F4D /* MGGameplayOption.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		89BDDB45222938E5004E2F4D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				89BDDB43222938E1004E2F4D /* MGGameplayButton.swift */,
+				89BDDB4622293CFF004E2F4D /* MGHeaderLabel.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		89BDDB4822293E8A004E2F4D /* Apple Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				89BDDB4922293EB2004E2F4D /* UILabelExtension.swift */,
+			);
+			path = "Apple Extensions";
+			sourceTree = "<group>";
+		};
+		89BDDB4B22294A40004E2F4D /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				89BDDB4122293628004E2F4D /* MGConstants.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		89BDDB4C22294A4C004E2F4D /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				89BDDB162228D031004E2F4D /* Assets.xcassets */,
+				89BDDB182228D031004E2F4D /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,11 +293,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				89BDDB3A22292102004E2F4D /* MGCard.swift in Sources */,
+				89BDDB4022292E45004E2F4D /* MGGameplayOption.swift in Sources */,
 				89BDDB3C222922AD004E2F4D /* MGCardType.swift in Sources */,
 				89BDDB302228D4CC004E2F4D /* MGLobbyViewController.swift in Sources */,
 				89BDDB3522291943004E2F4D /* MGGameplayScene.swift in Sources */,
+				89BDDB4222293628004E2F4D /* MGConstants.swift in Sources */,
 				89BDDB33222901EC004E2F4D /* MGGameplayViewController.swift in Sources */,
 				89BDDB0A2228D031004E2F4D /* AppDelegate.swift in Sources */,
+				89BDDB44222938E1004E2F4D /* MGGameplayButton.swift in Sources */,
+				89BDDB4A22293EB2004E2F4D /* UILabelExtension.swift in Sources */,
+				89BDDB4722293CFF004E2F4D /* MGHeaderLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
