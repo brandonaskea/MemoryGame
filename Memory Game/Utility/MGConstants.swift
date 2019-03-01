@@ -16,6 +16,12 @@ struct MGConstants {
     static let secondaryColor = UIColor(red: (0/255.0), green: (143/255.0), blue: (196/255.0), alpha: 1)
     
     static let buttonCornerRadius:CGFloat = 6
+    static let buttonTitleFont:UIFont = UIFont(name: "Noteworthy-Bold", size: 16) ?? UIFont.systemFont(ofSize: 16)
+    static let buttonTitleStrokeColor:UIColor = .white
+    static let buttonTitleStrokeWidth:CGFloat = -4.0
+    static let buttonDescriptionFont = UIFont(name: "Noteworthy-Bold", size: 12) ?? UIFont.systemFont(ofSize: 12)
+    static let buttonDescriptionStrokeColor:UIColor = MGConstants.mainColor
+    static let buttonDescriptionStrokeWidth:CGFloat = -2.0
     
     static let sizeSpliceChar = "x"
 }

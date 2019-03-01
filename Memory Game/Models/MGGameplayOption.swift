@@ -13,15 +13,19 @@ enum MGGameplayOption: String {
     case two    = "5x2"
     case three  = "4x4"
     case four   = "4x5"
-    static func stringFor(tag: Int) -> String {
+    static func optionFor(tag: Int) -> MGGameplayOption {
         switch tag {
-        case 1: return MGGameplayOption.one.rawValue
-        case 2: return MGGameplayOption.two.rawValue
-        case 3: return MGGameplayOption.three.rawValue
-        case 4: return MGGameplayOption.four.rawValue
+        case 1: return MGGameplayOption.one
+        case 2: return MGGameplayOption.two
+        case 3: return MGGameplayOption.three
+        case 4: return MGGameplayOption.four
         default:
-            return MGGameplayOption.one.rawValue // should never execute
+            return MGGameplayOption.one // should never execute
         }
+    }
+    static func descriptionFor(option: MGGameplayOption) -> String {
+        let size = sizeFor(option: option)
+        return "\(Int(size.height)) rows. \(Int(size.width)) cards in a row. \(Int(size.width * size.height)) total!"
     }
     static func sizeFor(option: MGGameplayOption) -> CGSize {
         let string = option.rawValue
