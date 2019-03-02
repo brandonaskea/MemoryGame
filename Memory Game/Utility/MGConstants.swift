@@ -24,4 +24,7 @@ struct MGConstants {
     static let buttonDescriptionStrokeWidth:CGFloat = -2.0
     
     static let sizeSpliceChar = "x"
+    
+    static let gameplaySegueID = "gameplay"
+    
 }

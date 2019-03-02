@@ -51,6 +51,9 @@
                                                     </constraint>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
+                                                <connections>
+                                                    <action selector="gameplayButtonTapped:" destination="yNi-Va-1fD" eventType="touchUpInside" id="w66-EK-SFu"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -72,6 +75,9 @@
                                                     </constraint>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
+                                                <connections>
+                                                    <action selector="gameplayButtonTapped:" destination="yNi-Va-1fD" eventType="touchUpInside" id="yAL-Nl-vO8"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -93,6 +99,9 @@
                                                     </constraint>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
+                                                <connections>
+                                                    <action selector="gameplayButtonTapped:" destination="yNi-Va-1fD" eventType="touchUpInside" id="NgT-6N-6Or"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -114,6 +123,9 @@
                                                     </constraint>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
+                                                <connections>
+                                                    <action selector="gameplayButtonTapped:" destination="yNi-Va-1fD" eventType="touchUpInside" id="5K8-uZ-Rra"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -151,7 +163,7 @@
                         <outletCollection property="gameplayButtons" destination="nkf-PQ-BQd" collectionClass="NSMutableArray" id="brR-5S-uXw"/>
                         <outletCollection property="gameplayButtons" destination="T8n-vM-VZc" collectionClass="NSMutableArray" id="Mo1-up-CqP"/>
                         <outletCollection property="gameplayButtons" destination="g1h-kb-yVf" collectionClass="NSMutableArray" id="4Zr-Nq-bj7"/>
-                        <segue destination="BV1-FR-VrT" kind="presentation" identifier="gameplay" id="Ast-8z-lRH"/>
+                        <segue destination="BV1-FR-VrT" kind="show" identifier="gameplay" id="Ast-8z-lRH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAE-3l-F4u" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -161,17 +173,37 @@
         <!--Gameplay View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
                 <viewController id="BV1-FR-VrT" customClass="MGGameplayViewController" customModule="Memory_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YbA-Kp-z8U">
+                                <rect key="frame" x="20" y="30" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="McS-7P-Md1"/>
+                                    <constraint firstAttribute="height" constant="60" id="q6p-ha-lZU"/>
+                                </constraints>
+                                <state key="normal" image="backNavButton"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="BV1-FR-VrT" eventType="touchUpInside" id="cZE-wr-KB5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YbA-Kp-z8U" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="10" id="dkz-jN-BO8"/>
+                            <constraint firstItem="YbA-Kp-z8U" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="20" id="lza-rg-uey"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="535" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backNavButton" width="95.5" height="82"/>
+    </resources>
 </document>

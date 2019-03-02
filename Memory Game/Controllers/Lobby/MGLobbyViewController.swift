@@ -13,6 +13,8 @@ class MGLobbyViewController: UIViewController {
     @IBOutlet weak var headerLabel: MGHeaderLabel!
     @IBOutlet var gameplayButtons: [MGGameplayButton]!
     
+    // MARK: Set Up
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
@@ -27,6 +29,20 @@ class MGLobbyViewController: UIViewController {
         for button in gameplayButtons {
             button.configure()
         }
+    }
+    
+    // MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let option = sender as? MGGameplayOption,
+        let gameplayVC = segue.destination as? MGGameplayViewController else { return }
+        gameplayVC.option = option
+    }
+    
+    // MARK: Button Actions
+    
+    @IBAction func gameplayButtonTapped(_ sender: MGGameplayButton) {
+        performSegue(withIdentifier: MGConstants.gameplaySegueID, sender: sender.option)
     }
 
 }

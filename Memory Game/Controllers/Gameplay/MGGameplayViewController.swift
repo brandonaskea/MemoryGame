@@ -11,20 +11,22 @@ import SpriteKit
 import GameplayKit
 
 class MGGameplayViewController: UIViewController {
+    
+    var option: MGGameplayOption!
+    
+    // MARK: Set Up
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        guard let view = self.view as? SKView,
-        let scene = SKScene(fileNamed: MGConstants.sceneName)
-        else { return }
-        
-        scene.scaleMode = .aspectFill
-        
-        view.presentScene(scene)
-        view.ignoresSiblingOrder = true
-        view.showsFPS = true
-        view.showsNodeCount = true
+        setUpScene()
+    }
+    
+    private func setUpScene() {
+        guard let gameView = self.view as? SKView else { return }
+        let scene = MGGameplayScene(fileNamed: MGConstants.sceneName, option: option)
+        gameView.presentScene(scene)
+        gameView.ignoresSiblingOrder = true
+        gameView.backgroundColor = .white
     }
     
     override var shouldAutorotate: Bool {
@@ -32,15 +34,14 @@ class MGGameplayViewController: UIViewController {
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
-        }
+        return .portrait
     }
     
     override var prefersStatusBarHidden: Bool {
         return true
     }
 
+    @IBAction func backButtonTapped(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
 }
