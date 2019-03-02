@@ -27,4 +27,8 @@ struct MGConstants {
     
     static let gameplaySegueID = "gameplay"
     
+    static let gameplayFailureDelay:Double = 1.0
+    static let gameplaySuccessBlend:CGFloat = 0.5
+    static let gameplaySuccessDurat:Double = 0.25
+    
 }

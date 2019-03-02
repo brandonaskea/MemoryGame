@@ -11,20 +11,39 @@ import SpriteKit
 
 class MGCard: SKSpriteNode {
     
-    private var type: MGCardType = .unknown
+    var type: MGCardType = .unknown
     
-    init(size: CGSize) {
+    init(size: CGSize, cardType: MGCardType) {
         super.init(texture: nil, color: .clear, size: size)
-        updateWith(cardType: type)
+        type = cardType
+        revert()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func updateWith(cardType: MGCardType) {
-        type = cardType
-        texture = SKTexture(imageNamed: "card_\(type.rawValue)")
+    private func updateWith(cardType: MGCardType) {
+        let value = cardType.rawValue
+        texture = SKTexture(imageNamed: "card_\(value)")
+        if value != 0 {
+            isUserInteractionEnabled = true
+        }
+        else {
+            isUserInteractionEnabled = false
+        }
+    }
+    
+    public func show() {
+        updateWith(cardType: type)
+    }
+    
+    public func setAsMatched() {
+        run(SKAction.colorize(with: MGConstants.mainColor, colorBlendFactor: MGConstants.gameplaySuccessBlend, duration: MGConstants.gameplaySuccessDurat))
+    }
+    
+    public func revert() {
+        updateWith(cardType: .unknown)
     }
     
 }

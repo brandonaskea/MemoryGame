@@ -23,7 +23,7 @@ class MGGameplayViewController: UIViewController {
     
     private func setUpScene() {
         guard let gameView = self.view as? SKView else { return }
-        let scene = MGGameplayScene(fileNamed: MGConstants.sceneName, option: option)
+        let scene = MGGameplayScene(fileNamed: MGConstants.sceneName, gameplayOption: option)
         gameView.presentScene(scene)
         gameView.ignoresSiblingOrder = true
         gameView.backgroundColor = .white

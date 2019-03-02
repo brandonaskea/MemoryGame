@@ -12,23 +12,26 @@ import SpriteKit
 class MGGameplayScene: SKScene {
     
     var option: MGGameplayOption!
+    var typeSets: [[MGCardType]] = []
     var cards: [MGCard] = []
     var gameSize: CGSize = .zero
+    var selectedCard: MGCard? = nil
+    var cardToMatch: MGCard? = nil
     
     // MARK: Set Up
     
-    init(fileNamed: String, option: MGGameplayOption) {
+    init(fileNamed: String, gameplayOption: MGGameplayOption) {
         let size = CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
         super.init(size: size)
-        self.option = option
+        option = gameplayOption
         gameSize = MGGameplayOption.sizeFor(option: option)
+        typeSets = MGCardType.cardTypeSetsFor(total: Int(gameSize.width * gameSize.height))
         scaleMode = .aspectFit
         backgroundColor = .white
     }
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func didMove(to view: SKView) {
@@ -36,23 +39,21 @@ class MGGameplayScene: SKScene {
     }
     
     func setUpRows() {
-        let size = MGGameplayOption.sizeFor(option: option)
-        let numberOfRows = Int(size.height)
-        let numberOfCards = Int(size.width)
+        let numberOfRows = Int(gameSize.height)
+        let numberOfCards = Int(gameSize.width)
         for i in 0..<numberOfRows {
             setUpCardsFor(row: i, numberOfCards: numberOfCards)
         }
     }
     
     func setUpCardsFor(row: Int, numberOfCards: Int) {
-        let size = MGGameplayOption.sizeFor(option: option)
         let screenWidth = self.frame.size.width
-        let cardWidth = screenWidth / size.width
+        let cardWidth = screenWidth / gameSize.width
         let cardHeight = cardWidth
         for i in 0..<numberOfCards {
             let xPosition:CGFloat = cardWidth * CGFloat(i)
             let yPosition:CGFloat = cardHeight * CGFloat(row)
-            let card = MGCard(size: CGSize(width: cardWidth, height: cardHeight))
+            let card = MGCard(size: CGSize(width: cardWidth, height: cardHeight), cardType: valueForCard())
             card.position = CGPoint(x: xPosition, y: yPosition)
             card.anchorPoint = CGPoint(x: 0, y: 0)
             cards.append(card)
@@ -60,38 +61,79 @@ class MGGameplayScene: SKScene {
         }
     }
     
+    func valueForCard() -> MGCardType {
+        let randomIndex = Int(arc4random_uniform(UInt32(typeSets.count - 1)))
+        var set = typeSets[randomIndex]
+        if set.isEmpty {
+            typeSets.remove(at: randomIndex)
+            return valueForCard()
+        }
+        let value = set.removeFirst()
+        typeSets[randomIndex] = set
+        return value
+    }
+    
     // MARK: User Input
     
-    func touchDown(atPoint pos : CGPoint) {
-
+    private func cardAt(_ touch: UITouch) -> MGCard? {
+        let point = touch.location(in: self)
+        let spriteNodes = nodes(at: point)
+        return spriteNodes.first as? MGCard
     }
     
-    func touchMoved(toPoint pos : CGPoint) {
-
-    }
-    
-    func touchUp(atPoint pos : CGPoint) {
-
+    private func resultWith(_ touch: UITouch) {
+        /*
+         (1) Ensure that the touched card is indeed the one the user intended to select.
+         (2) If so, determine if there is already a card to match against.
+         (3) If not, the card is marked as the one to be matched next.
+         (4) If they are a match both are removed from the cards collection.
+         (5) If they are not a match both are 'flipped' after 1 second.
+         (6) When all cards have been removed, all have been matched. Game over.
+        */
+        guard let card = cardAt(touch),
+        let selected = selectedCard,
+        card == selected // (1)
+        else { selectedCard = nil; return }
+        if let matchCard = cardToMatch { // (2)
+            if card.type == matchCard.type {
+                card.setAsMatched()
+                matchCard.setAsMatched()
+                cards.removeAll { (c) -> Bool in // (4)
+                    return c.type == card.type
+                }
+                if cards.isEmpty { // (6)
+                    print("GAME OVER!")
+                }
+            }
+            else { // (5)
+                DispatchQueue.main.asyncAfter(deadline: .now()
+                    + MGConstants.gameplayFailureDelay) {
+                        card.revert()
+                        matchCard.revert()
+                }
+            }
+            selectedCard = nil
+            cardToMatch = nil
+        }
+        else { // (3)
+            cardToMatch = card
+        }
+        card.show()
+        selectedCard = nil
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-
+        guard let touch = touches.first else { return }
+        selectedCard = cardAt(touch)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-
+        guard let touch = touches.first else { return }
+        resultWith(touch)
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-
+        selectedCard = nil
     }
     
-    
-    override func update(_ currentTime: TimeInterval) {
-
-    }
 }
