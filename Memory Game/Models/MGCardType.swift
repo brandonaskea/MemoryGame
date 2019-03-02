@@ -14,7 +14,7 @@ enum MGCardType: Int {
 
 extension MGCardType: CaseIterable {
     
-    public static func cardTypeSetsFor(total: Int) -> [[MGCardType]] {
+    public static func typesFor(total: Int) -> [MGCardType] {
         /*
             'total' is the how many cards total are in a game.
             Per the available types, grab a random type set
@@ -23,10 +23,11 @@ extension MGCardType: CaseIterable {
             that the types will always be random and of the
             correct amount.
         */
-        let availableTypeSets:[[MGCardType]] = typeSets().shuffled()
+        let availableTypeSets:[[MGCardType]] = typeSets()
         var cardTypeSets:[[MGCardType]] = []
         cardTypeSets.append(contentsOf: availableTypeSets.prefix(upTo: total / 2))
-        return cardTypeSets
+        let types = cardTypeSets.flatMap { $0 }
+        return types.shuffled()
     }
     
     private static func typeSets() -> [[MGCardType]] {

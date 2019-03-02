@@ -12,7 +12,7 @@ import SpriteKit
 class MGGameplayScene: SKScene {
     
     var option: MGGameplayOption!
-    var typeSets: [[MGCardType]] = []
+    var types: [MGCardType] = []
     var cards: [MGCard] = []
     var gameSize: CGSize = .zero
     var selectedCard: MGCard? = nil
@@ -25,7 +25,7 @@ class MGGameplayScene: SKScene {
         super.init(size: size)
         option = gameplayOption
         gameSize = MGGameplayOption.sizeFor(option: option)
-        typeSets = MGCardType.cardTypeSetsFor(total: Int(gameSize.width * gameSize.height))
+        types = MGCardType.typesFor(total: Int(gameSize.width * gameSize.height))
         scaleMode = .aspectFit
         backgroundColor = .white
     }
@@ -53,24 +53,12 @@ class MGGameplayScene: SKScene {
         for i in 0..<numberOfCards {
             let xPosition:CGFloat = cardWidth * CGFloat(i)
             let yPosition:CGFloat = cardHeight * CGFloat(row)
-            let card = MGCard(size: CGSize(width: cardWidth, height: cardHeight), cardType: valueForCard())
+            let card = MGCard(size: CGSize(width: cardWidth, height: cardHeight), cardType: types.removeFirst())
             card.position = CGPoint(x: xPosition, y: yPosition)
             card.anchorPoint = CGPoint(x: 0, y: 0)
             cards.append(card)
             addChild(card)
         }
-    }
-    
-    func valueForCard() -> MGCardType {
-        let randomIndex = Int(arc4random_uniform(UInt32(typeSets.count - 1)))
-        var set = typeSets[randomIndex]
-        if set.isEmpty {
-            typeSets.remove(at: randomIndex)
-            return valueForCard()
-        }
-        let value = set.removeFirst()
-        typeSets[randomIndex] = set
-        return value
     }
     
     // MARK: User Input
