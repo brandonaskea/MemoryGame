@@ -33,7 +33,7 @@ class MGGameplayButton: UIButton {
         ]
         let attributedTitle = NSMutableAttributedString(string: "\(option.rawValue)\n\(MGGameplayOption.descriptionFor(option: option))")
         attributedTitle.addAttributes(titleAttributes, range: NSRange(location: 0, length: attributedTitle.length))
-        attributedTitle.addAttributes(descriptionAttributes, range: NSRange(location: 3, length: attributedTitle.length - 3))
+        attributedTitle.addAttributes(descriptionAttributes, range: NSRange(location: MGGameplayOption.one.rawValue.count, length: attributedTitle.length - MGGameplayOption.one.rawValue.count))
         setAttributedTitle(attributedTitle, for: .normal)
     }
 }

@@ -100,7 +100,6 @@ class MGGameplayScene: SKScene {
                         matchCard.revert()
                 }
             }
-            selectedCard = nil
             cardToMatch = nil
         }
         else { // (3)

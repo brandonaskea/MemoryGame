@@ -16,7 +16,7 @@ extension MGCardType: CaseIterable {
     
     public static func typesFor(total: Int) -> [MGCardType] {
         /*
-            'total' is the how many cards total are in a game.
+            The 'total' is how many cards total are in a game.
             Per the available types, grab a random type set
             and add them to the values for the game cards.
             This will ensure no matter the size of the game

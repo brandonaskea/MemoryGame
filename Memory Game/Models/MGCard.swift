@@ -25,7 +25,7 @@ class MGCard: SKSpriteNode {
     
     private func updateWith(cardType: MGCardType) {
         let value = cardType.rawValue
-        texture = SKTexture(imageNamed: "card_\(value)")
+        texture = SKTexture(imageNamed: "\(MGConstants.texturePrefix)\(value)")
         if value != 0 {
             isUserInteractionEnabled = true
         }

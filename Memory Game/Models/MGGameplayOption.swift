@@ -25,7 +25,7 @@ enum MGGameplayOption: String {
     }
     static func descriptionFor(option: MGGameplayOption) -> String {
         let size = sizeFor(option: option)
-        return "\(Int(size.height)) rows. \(Int(size.width)) cards in a row. \(Int(size.width * size.height)) total!"
+        return "\(Int(size.height)) \(MGConstants.optionDescRows) \(Int(size.width)) \(MGConstants.optionDescCards) \(Int(size.width * size.height)) \(MGConstants.optionDescTotal)"
     }
     static func sizeFor(option: MGGameplayOption) -> CGSize {
         let string = option.rawValue
