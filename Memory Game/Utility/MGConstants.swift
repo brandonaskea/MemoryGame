@@ -36,4 +36,5 @@ struct MGConstants {
     static let gameplaySuccessBlend:CGFloat = 0.5
     static let gameplaySuccessDurat:Double = 0.25
     
+    static let gameplayCardsPadding:CGFloat = 8
 }

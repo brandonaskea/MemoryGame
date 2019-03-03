@@ -48,11 +48,12 @@ class MGGameplayScene: SKScene {
     
     func setUpCardsFor(row: Int, numberOfCards: Int) {
         let screenWidth = self.frame.size.width
-        let cardWidth = screenWidth / gameSize.width
+        let padding = MGConstants.gameplayCardsPadding
+        let cardWidth = ((screenWidth - (padding * CGFloat(numberOfCards + 1))) / gameSize.width)
         let cardHeight = cardWidth
         for i in 0..<numberOfCards {
-            let xPosition:CGFloat = cardWidth * CGFloat(i)
-            let yPosition:CGFloat = cardHeight * CGFloat(row)
+            let xPosition:CGFloat = (cardWidth * CGFloat(i)) + padding + (padding * CGFloat(i))
+            let yPosition:CGFloat = (cardHeight * CGFloat(row)) + padding + (padding * CGFloat(row))
             let card = MGCard(size: CGSize(width: cardWidth, height: cardHeight), cardType: types.removeFirst())
             card.position = CGPoint(x: xPosition, y: yPosition)
             card.anchorPoint = CGPoint(x: 0, y: 0)
