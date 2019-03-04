@@ -21,8 +21,7 @@ class MGGameplayScene: SKScene {
     // MARK: Set Up
     
     init(fileNamed: String, gameplayOption: MGGameplayOption) {
-        let size = CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
-        super.init(size: size)
+        super.init(size: UIScreen.main.bounds.size)
         option = gameplayOption
         gameSize = MGGameplayOption.sizeFor(option: option)
         types = MGCardType.typesFor(total: Int(gameSize.width * gameSize.height))

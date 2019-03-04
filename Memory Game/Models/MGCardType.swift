@@ -23,7 +23,7 @@ extension MGCardType: CaseIterable {
             that the types will always be random and of the
             correct amount.
         */
-        let availableTypeSets:[[MGCardType]] = typeSets()
+        let availableTypeSets:[[MGCardType]] = typeSets().shuffled()
         var cardTypeSets:[[MGCardType]] = []
         cardTypeSets.append(contentsOf: availableTypeSets.prefix(upTo: total / 2))
         let types = cardTypeSets.flatMap { $0 }
