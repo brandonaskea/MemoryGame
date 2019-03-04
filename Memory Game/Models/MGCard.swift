@@ -38,10 +38,6 @@ class MGCard: SKSpriteNode {
         updateWith(cardType: type)
     }
     
-    public func setAsMatched() {
-        run(SKAction.colorize(with: MGConstants.mainColor, colorBlendFactor: MGConstants.gameplaySuccessBlend, duration: MGConstants.gameplaySuccessDurat))
-    }
-    
     public func revert() {
         updateWith(cardType: .unknown)
     }

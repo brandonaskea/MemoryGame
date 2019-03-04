@@ -85,8 +85,6 @@ class MGGameplayScene: SKScene {
         else { selectedCard = nil; return }
         if let matchCard = cardToMatch { // (2)
             if card.type == matchCard.type {
-                card.setAsMatched()
-                matchCard.setAsMatched()
                 cards.removeAll { (c) -> Bool in // (4)
                     return c.type == card.type
                 }
